@@ -1,0 +1,16 @@
+@use "../util/" as *;
+@use "../globals/" as *;
+
+.header {
+  &--tienda {
+    @extend .header;
+    background-image: url('../../assets/background.jpg');
+    min-height: auto;
+
+    h1 {
+      @include breakpoint(large) {
+        max-width: 100%;
+      }
+    }
+  }
+}
