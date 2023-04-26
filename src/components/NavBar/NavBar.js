@@ -1,10 +1,10 @@
-import Cart from './Cart'
+import Cart from './CartWidget'
 import Brand from './Brand'
 import NavMenu from './NavMenu'
 import Hamburger from './Hamburger'
 
 const NavBar = () => 
-  <nav class="navBar">
+  <nav className="navBar">
     <Hamburger />
     <Brand />
     <NavMenu />

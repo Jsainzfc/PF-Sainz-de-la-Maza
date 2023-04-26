@@ -6,7 +6,7 @@ const App = () => (
   <>
     <NavBar />
     <Hero title={"Tienda gráfica"}/>
-    <ItemListContainer greeting={"Hola"}/>
+    <ItemListContainer greeting={"Bienvenido a la tienda gráfica de Yellow Cactus"}/>
   </>
 )
 

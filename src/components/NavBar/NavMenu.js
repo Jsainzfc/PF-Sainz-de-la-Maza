@@ -3,14 +3,14 @@ import Youtube from '../../assets/youtube.png'
 import Linkedin from '../../assets/linkedin.png'
 
 const NavMenu = () => 
-  <div class="flex__col flex--center navBar__menu">
-    <ul class="flex__col flex--center center-text navBar__navigation">
+  <div className="flex__col flex--center navBar__menu">
+    <ul className="flex__col flex--center center-text navBar__navigation">
       <li><a href="./src/soluciones.html">Soluciones</a></li>
       <li><a href="./src/trabajos.html">Trabajos</a></li>
       <li><a href="./src/tienda-grafica.html">Tienda Gráfica</a></li>
     </ul>
 
-    <ul class="flex--center navBar__ssnn">
+    <ul className="flex--center navBar__ssnn">
       <li><a href="https://www.instagram.com/yellowcactustudio"><img src={Instagram} alt="instagram" /></a>
       </li>
       <li><a href="https://www.youtube.com/channel/UCVSJtKXJRQF9KXcyZTNyoKA"><img src={Youtube}
@@ -19,7 +19,7 @@ const NavMenu = () =>
             alt="linkedin" /></a></li>
     </ul>
 
-    <a class="navBar__button button" href="./src/contacto.html">Contactar</a>
+    <a className="navBar__button button" href="./src/contacto.html">Contactar</a>
   </div>
 
 

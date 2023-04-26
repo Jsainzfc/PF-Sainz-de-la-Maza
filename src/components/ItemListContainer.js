@@ -1,6 +1,10 @@
+import ProductImg from '../assets/product-1.png'
+
 const ItemListContainer = ({greeting}) => {
   return (
-      <h1>{greeting}</h1>
+    <main>
+      <h2 className="tienda__greeting">{greeting}</h2>
+    </main>
   )
 }
 

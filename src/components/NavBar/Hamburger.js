@@ -1,6 +1,6 @@
 const Hamburger = () => {
   return (
-    <div class="hamburger">
+    <div className="hamburger">
       <span></span>
     </div>
   )
