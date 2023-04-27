@@ -1,4 +1,4 @@
-import CartIcon from '../../assets/cart.png'
+import CartIcon from '../assets/cart.png'
 
 const Cart = () => 
   <a className="flex navBar__cart" href="/">

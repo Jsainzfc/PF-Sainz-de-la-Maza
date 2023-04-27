@@ -1,11 +1,12 @@
-import NavBar from './components/NavBar/NavBar';
-import Hero from './components/Hero';
+import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 
 const App = () => (
   <>
     <NavBar />
-    <Hero title={"Tienda gráfica"}/>
+    <header className="header--tienda center-text">
+      <h1>Tienda Gráfica</h1>
+    </header>
     <ItemListContainer greeting={"Bienvenido a la tienda gráfica de Yellow Cactus"}/>
   </>
 )
