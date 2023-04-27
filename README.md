@@ -7,7 +7,7 @@ Pre Entrega 1 del curso React de Coderhouse
 Creación de una tienda online.
 
 - Branding de la tienda: Yellow Cactus - Tienda Gráfica
-- Categorías: Servicios Digitales, Plantillas, Freebies, Productividad y Negocio.
+- Categorías: Servicios Digitales, Plantillas, Freebies.
 
 ## Base del proyecto
 
@@ -16,9 +16,5 @@ El proyecto toma como base el proyecto final entregado en el curso de Javascript
 ## Alcance de preEntrega1
 
 En esta preEntrega se creará una aplicación de React mediante el uso del ejecutable create-react-app. Esta se tomará como base para la creación de la tienda online.
-Se crearán 3 componentes: NavBar, Hero y ItemListContainer.
-La NavBar a su vez se divide en varios componentes: Hamburger (switch de menú para tabletas y móviles), NavMenu (menú principal), Brand (logo de la web) y Cart (carrito con la cantidad por ahora hardcoded).
-El componente Hero acepta un prop de entrada que define el título de la página.
-El componente ItemListContainer contendrá en el futuro los diferentes productos de la tienda.
 
 Para el estilo se ha decidido no usar ninguna librería y emplear SASS.

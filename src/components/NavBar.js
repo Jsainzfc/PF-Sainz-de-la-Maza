@@ -14,9 +14,9 @@ const NavBar = () =>
     </a>
     <div className="flex__col flex--center navBar__menu">
       <ul className="flex__col flex--center center-text navBar__navigation">
-        <li><a href="./src/soluciones.html">Soluciones</a></li>
-        <li><a href="./src/trabajos.html">Trabajos</a></li>
-        <li><a href="./src/tienda-grafica.html">Tienda Gráfica</a></li>
+        <li><a href="#">Servicios Digitales</a></li>
+        <li><a href="#">Plantillas</a></li>
+        <li><a href="#">Freebies</a></li>
       </ul>
 
       <ul className="flex--center navBar__ssnn">
