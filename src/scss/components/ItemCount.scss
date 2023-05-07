@@ -1,0 +1,50 @@
+@use "../util/" as *;
+
+.itemCount {
+  gap: 30px;
+  border-radius: 10px;
+  width: 250px;
+  font-family: 'Poppins', sans-serif;
+
+  &__quantity {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $fondos;
+    padding: 5px 15px;
+    border: 1px solid $fuente;
+    border-radius: 5px;
+
+    &--button {
+      background: none;
+      border: none;
+      font-size: 28px;
+      padding: 0;
+      cursor: pointer;
+      width: 28px;
+    }
+
+    &--amount {
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+
+  &__add-to-cart {
+    width: 100%;
+    background-color: $buttons;
+    padding: 10px;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+  
+    &:hover {
+      background-color: $buttons-hover;
+      transform: scale(1.1);
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+  
+  }
+}

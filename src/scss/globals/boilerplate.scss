@@ -72,6 +72,7 @@ a, a:visited {
   border-radius: 6px;
   font-size: 16px;
   cursor: pointer;
+  font-family: 'Poppins', sans-serif;
 
   @include breakpoint(medium) {
     font-size: 18px;
@@ -80,6 +81,7 @@ a, a:visited {
 
 .font-base {
   font-style: normal;
+  font-family: 'Poppins', sans-serif;
 }
 
 .h_base {
