@@ -1,13 +1,11 @@
-import ItemCount from './ItemCount'
+import ItemList from './ItemList'
 
 const ItemListContainer = ({greeting}) => {
-  const onAdd = (count) => {
-    console.log(`Added ${count}`)
-  }
+
   return (
     <main>
       <h2 className="tienda__greeting">{greeting}</h2>
-      <ItemCount stock={5} initial={1} onAdd={onAdd}/>
+      <ItemList />
     </main>
   )
 }

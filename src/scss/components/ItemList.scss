@@ -1,0 +1,8 @@
+@use "../util/" as *;
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  padding: 50px;
+}
