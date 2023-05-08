@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Item from "./Item"
 
 const ItemList = () => {
@@ -42,17 +42,22 @@ const ItemList = () => {
       .catch(err => console.error(err))
   }
 
-  awaitItems()
+  useEffect(() => {
+    awaitItems()
+  }, [])
 
-  return (
-    <div className='products'>
-      {
-      products.length===0 
-        ? <h1>Cargando productos</h1> 
-        : products.map(product => <Item key={product.id} product={product}/> )
-      }
-    </div>
-  )
-}
+  if (products.length === 0) {
+    return <div id="loading"></div>
+  } else {
+    return (
+      <div className='products container'>
+        {
+        products.length===0 
+          ? <div id="loading"></div> 
+          : products.map(product => <Item key={product.id} product={product}/> )
+        }
+      </div>
+    )}
+  }
 
 export default ItemList

@@ -135,7 +135,7 @@ p {
 }
 
 .container {
-  @extend .flex__col, .flex--center, .center-text;
+  max-width: 1420px;
   padding: 0 30px;
 
   @include breakpoint (medium) {
