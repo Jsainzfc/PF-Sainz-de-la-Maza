@@ -3,20 +3,36 @@ import Instagram from '../assets/instagram.png'
 import Youtube from '../assets/youtube.png'
 import Linkedin from '../assets/linkedin.png'
 import Logo from '../assets/logo.png'
+import { Link, NavLink } from 'react-router-dom'
 
-const NavBar = () => 
-  <nav className="navBar">
+const NavBar = () => {
+
+  const categories = [
+    {
+      id: 'digital',
+      name: 'Servicios Digitales'
+    },
+    {
+      id: 'plantillas',
+      name: 'Plantillas'
+    },
+    {
+      id: 'freebies',
+      name: 'Freebies'
+    }
+  ]
+
+  return (
+    <nav className="navBar">
     <div className="hamburger">
       <span></span>
     </div>
-    <a href="/index.html">
+    <Link to="/">
       <img className="navBar__logo" src={Logo} alt="logo" />
-    </a>
+    </Link>
     <div className="flex__col flex--center navBar__menu">
       <ul className="flex__col flex--center center-text navBar__navigation">
-        <li><a href="/">Servicios Digitales</a></li>
-        <li><a href="/">Plantillas</a></li>
-        <li><a href="/">Freebies</a></li>
+        {categories.map(cat => <li key={cat.id} ><NavLink to={`/category/${cat.id}`}>{cat.name}</NavLink></li>)}
       </ul>
 
       <ul className="flex--center navBar__ssnn">
@@ -32,5 +48,7 @@ const NavBar = () =>
     </div>
     <Cart />
   </nav>
+  )
+}
 
-  export default NavBar
+export default NavBar
