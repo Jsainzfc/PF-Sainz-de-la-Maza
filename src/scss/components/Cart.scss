@@ -1,0 +1,81 @@
+@use "../util/" as *;
+
+.cart-page {
+  &__content {
+    width: 100%;
+    gap: 50px;
+  }
+}
+
+.cart-content {
+  gap: 80px;
+}
+
+.empty-cart {
+  font-size: 26px;
+  font-weight: 400;
+}
+
+a.cart-back {
+  color: white;
+  padding: 16px 35px;
+}
+
+.cart-item {
+  gap: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  &__details {
+    gap: 20px;
+    justify-content: center;
+  }
+
+  &__picture {
+    width: 100%;
+  }
+}
+
+.cart-details {
+  &__title {
+    font-weight: 500;
+    font-size: 26px;
+  }
+
+  &__price {
+    font-weight: 600;
+    font-size: 24px;
+  }
+
+  &__count {
+    gap: 20px;
+  }
+}
+
+.item-count {
+  &__quantity {
+    font-size: 20px;
+    font-weight: 400;
+  }
+}
+
+.cart-quantity {
+  font-weight: 600;
+}
+
+.item-count {
+  &__trash {
+    width: 22px;
+    aspect-ratio: 1;
+    cursor: pointer;
+  }
+}
+
+.cart-total {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.emptyCart {
+  width: 200px;
+}

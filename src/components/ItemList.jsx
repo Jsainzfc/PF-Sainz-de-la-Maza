@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 import Item from "./Item"
-import { NavLink } from "react-router-dom"
 import itemsDB from "../productsDB"
 
 const ItemList = ({category}) => {
@@ -38,7 +37,7 @@ const ItemList = ({category}) => {
         {
         products.length===0 
           ? <div id="loading"></div> 
-          : products.map(product => <NavLink to={`/item/${product.id}`}><Item key={product.id} product={product}/></NavLink> )
+          : products.map(product => <Item key={product.id} product={product}/> )
         }
       </div>
     )}

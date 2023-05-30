@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import ItemCount from "./ItemCount"
 import itemsDB from "../productsDB";
+import AddItemCount from "./AddItemCount";
 
 const ItemDetail = ({productId}) => {
-  console.log(productId)
 
   const [product, setProduct] = useState({})
 
@@ -24,10 +23,6 @@ const ItemDetail = ({productId}) => {
     awaitItem()
   }, [productId])
 
-  const onAdd = (count) => {
-    console.log(`Added ${count}`)
-  }
-
   if (product === undefined) {
     return (
       <div className='item-detail container'>
@@ -43,7 +38,7 @@ const ItemDetail = ({productId}) => {
             <h3 className='product-detail__title'>{product.title}</h3>
             <p className='product-detail__description' >{product.description}</p>
             <p className='product-detail__price' >{product.price}€</p>
-            <ItemCount stock={5} initial={1} onAdd={onAdd}/>
+            <AddItemCount product={product} stock={5} initial={1}/>
           </div>
         </div>
       </div>

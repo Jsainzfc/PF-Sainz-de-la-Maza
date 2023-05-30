@@ -1,9 +1,9 @@
-import Cart from './CartWidget'
 import Instagram from '../assets/instagram.png'
 import Youtube from '../assets/youtube.png'
 import Linkedin from '../assets/linkedin.png'
 import Logo from '../assets/logo.png'
 import { Link, NavLink } from 'react-router-dom'
+import CartWidget from './CartWidget'
 
 const NavBar = () => {
 
@@ -46,7 +46,7 @@ const NavBar = () => {
 
       <a className="navBar__button button" href="./src/contacto.html">Contactar</a>
     </div>
-    <Cart />
+    <CartWidget />
   </nav>
   )
 }
