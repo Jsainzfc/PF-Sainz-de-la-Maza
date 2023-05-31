@@ -11,6 +11,7 @@ const ItemDetailContainer = () => {
   useEffect (() => {
     setProductId(id)
   }, [id])
+  console.log(productId)
 
   return <ItemDetail productId={productId}/>
 }

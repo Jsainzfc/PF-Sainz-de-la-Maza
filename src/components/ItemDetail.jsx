@@ -1,26 +1,22 @@
 import { useEffect, useState } from "react";
-import itemsDB from "../productsDB";
 import AddItemCount from "./AddItemCount";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 const ItemDetail = ({productId}) => {
 
   const [product, setProduct] = useState({})
 
-  const getItem = new Promise ((resolve, reject) => {
-    setTimeout (() => {
-      resolve(itemsDB)
-      }, 2000);
+  useEffect (() => {
+    const db = getFirestore();
+    const categoriesCollection = doc(db, "items", productId)
+    getDoc(categoriesCollection)
+    .then((snapshot) => {
+      console.log(snapshot.exists())
+      if (snapshot.exists()) {
+        setProduct({id: snapshot.id, ...snapshot.data()})
+      }
     })
-
-  const awaitItem = async () => {
-    await getItem
-      .then(response => setProduct(response.find (item => item.id === productId)))
-      .catch(err => console.error(err))
-  }
-
-  useEffect(() => {
-    setProduct()
-    awaitItem()
+    .catch (err => console.error(err))
   }, [productId])
 
   if (product === undefined) {

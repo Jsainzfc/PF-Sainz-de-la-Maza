@@ -5,22 +5,7 @@ import Logo from '../assets/logo.png'
 import { Link, NavLink } from 'react-router-dom'
 import CartWidget from './CartWidget'
 
-const NavBar = () => {
-
-  const categories = [
-    {
-      id: 'digital',
-      name: 'Servicios Digitales'
-    },
-    {
-      id: 'plantillas',
-      name: 'Plantillas'
-    },
-    {
-      id: 'freebies',
-      name: 'Freebies'
-    }
-  ]
+const NavBar = ({categories}) => {
 
   return (
     <nav className="navBar">
@@ -32,7 +17,7 @@ const NavBar = () => {
     </Link>
     <div className="flex__col flex--center navBar__menu">
       <ul className="flex__col flex--center center-text navBar__navigation">
-        {categories.map(cat => <li key={cat.id} ><NavLink to={`/category/${cat.id}`}>{cat.name}</NavLink></li>)}
+        {categories.map(cat => <li key={cat.id} ><NavLink to={`/category/${cat.id}`}>{cat.title}</NavLink></li>)}
       </ul>
 
       <ul className="flex--center navBar__ssnn">

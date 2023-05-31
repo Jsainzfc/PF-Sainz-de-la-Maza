@@ -1,32 +1,29 @@
 import { useEffect, useState } from "react"
 import Item from "./Item"
-import itemsDB from "../productsDB"
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore"
 
 const ItemList = ({category}) => {
 
   const [products, setProducts] = useState([])
 
-  const getItems = new Promise ((resolve, reject) => {
-      setTimeout (() => {
-        resolve(itemsDB)
-        }, 2000);
-      })
-
-  const awaitItems = async () => {
-    await getItems
-      .then(response => {
-        if (category) {
-          setProducts(response.filter(item => item.category === category))
-        } else {
-          setProducts(response)
-        }
-      })
-      .catch(err => console.error(err))
-  }
-
-  useEffect(() => {
-    setProducts([])
-    awaitItems()
+  useEffect (() => {
+    const db = getFirestore();
+    let q
+    if (category) {
+      q = query(
+        collection(db, "items"),
+        where("category", "==", category)
+      )
+    } else {
+      q = query(
+        collection(db, "items")
+      )
+    }
+    getDocs(q)
+    .then((snapshot) => {
+      setProducts(snapshot.docs.map(item => ({id: item.id, ...item.data()})))
+    })
+    .catch (err => console.error(err))
   }, [category])
 
   if (products.length === 0) {
