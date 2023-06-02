@@ -44,7 +44,7 @@ const Cart = () => {
                 )})}
               </ul>
               <p className='cart-total'>Total: {getTotal()}€</p>
-              <button className='button'>Terminar la compra</button>
+              <NavLink className="button" to="/checkout">Terminar la compra</NavLink>
               <button onClick={handleEmptyCart} className='emptyCart button'>Vacíar el carrito</button>
             </div>}
     </main>

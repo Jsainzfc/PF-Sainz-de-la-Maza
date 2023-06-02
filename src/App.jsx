@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Cart from './components/Cart';
 import { useEffect, useState } from 'react';
 import { collection, getDocs, getFirestore } from 'firebase/firestore';
+import Checkout from './components/Checkout';
 
 const App = () => {
   const [categories, setCategories] = useState([])
@@ -31,6 +32,7 @@ const App = () => {
             <Route exact path='/category/:id' element={<ItemListContainer greeting={"Productos de la categoría: "} />} />
             <Route exact path='/item/:id' element={<ItemDetailContainer />} />
             <Route exact path='/cart' element={<Cart />} />
+            <Route exact path='/checkout' element={<Checkout />} />
           </Routes>
         </BrowserRouter>
       : <div id="loading"></div>
