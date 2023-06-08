@@ -1,6 +1,6 @@
-# PreEntrega2-Sainz-de-la-Maza
+# PF-Sainz-de-la-Maza
 
-Pre Entrega 2 del curso React de Coderhouse
+Proyecto final del curso React de Coderhouse
 
 ## Objetivo del proyecto
 
@@ -21,3 +21,6 @@ Para el estilo se ha decidido no usar ninguna librería y emplear SASS.
 
 ## Alcance de preEntrega2
 Routing de la aplicación empleando react-router-dom que incluya una Navbar con carrito, un Catálogo y un Detalle de producto. 
+
+## Alcance del proyecto final
+Se ha creado un carrito y finalización de compra. Se ha sincronizado con firebase para utilizarla como base de datos de productos y de pedidos. Los productos se recogen de firebase y los pedidos se envían a firebase.
