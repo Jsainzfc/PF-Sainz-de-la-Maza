@@ -24,3 +24,4 @@ Routing de la aplicación empleando react-router-dom que incluya una Navbar con 
 
 ## Alcance del proyecto final
 Se ha creado un carrito y finalización de compra. Se ha sincronizado con firebase para utilizarla como base de datos de productos y de pedidos. Los productos se recogen de firebase y los pedidos se envían a firebase.
+Link al vídeo demostración: https://www.loom.com/share/5bc35c35b6774482a439194c74531ce2
