@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom"
 import { addDoc, collection, getFirestore, serverTimestamp } from "firebase/firestore";
 
 const Checkout = () => {
-  const {cartList, getTotal} = useContext(Context)
+  const {cartList, getTotal, clear} = useContext(Context)
 
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -12,14 +12,21 @@ const Checkout = () => {
 
   const [orderId, setOrderId] = useState('')
 
-  const sendOrder = (order) => {
-    console.log(order)
+  const [order, setOrder] = useState({})
+
+  const sendOrder = () => {
     const db = getFirestore()
     const ordersCollection = collection(db, "orders")
     addDoc(ordersCollection, order)
-      .then (({id}) => setOrderId(id))
+      .then (
+        ({id}) => {
+          setOrderId(id)
+          clear()
+          setName('')
+          setEmail('')
+          setPhone('')
+        })
       .catch(err => alert('Ha habido algún error procesando su solicitud'))
-    console.log(orderId)
   }
 
   const handleSubmit = async(e) => {
@@ -27,10 +34,12 @@ const Checkout = () => {
     const items = cartList.map(item => {
       return {
         id: item.product.id,
+        name: item.product.title,
+        price: item.product.price,
         quantity: item.quantity
       }
     })
-    const order = {
+    setOrder ({
       buyer: {
         name: name,
         email: email,
@@ -39,8 +48,7 @@ const Checkout = () => {
       total: getTotal(),
       items: items,
       date: serverTimestamp()
-    }
-    console.log(order)
+    }) 
     await sendOrder(order)
   }
 
@@ -60,7 +68,8 @@ const Checkout = () => {
     <main className="container">
       {orderId
         ? <>
-            <h3>Gracias por su compra. Su identificador es: {orderId}</h3>
+            <h3>Gracias por su compra {order.buyer.name}. En breve recibirá un mail con información detallada de su pedido.</h3>
+            <h3>El identificador de su pedido es: {orderId}</h3>
           </>
         : <>
             <h2 className="tienda__greeting">Finalizar la compra</h2>

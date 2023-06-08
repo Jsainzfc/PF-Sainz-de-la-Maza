@@ -11,9 +11,14 @@ const ItemDetailContainer = () => {
   useEffect (() => {
     setProductId(id)
   }, [id])
-  console.log(productId)
 
-  return <ItemDetail productId={productId}/>
+  return (
+    <main>
+      {productId 
+        ? <ItemDetail productId={productId}/> 
+        : <div id="loading"></div>}
+    </main> 
+  )
 }
 
 export default ItemDetailContainer
